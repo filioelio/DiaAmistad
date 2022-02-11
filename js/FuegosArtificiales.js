@@ -1,5 +1,5 @@
 var gravedad = .5;
-var numHijos = 50;
+var numHijos = 30;
 
 var numParticulas = 100;
 var particulasCreadas = 0;
@@ -10,7 +10,6 @@ function crearParticula() {
 
     var y = window.innerHeight;
     var x = Math.random() * window.innerWidth;
-
     particula.style.top = y + "px";
     particula.style.left = x + "px";
 
@@ -27,12 +26,8 @@ function crearParticula() {
     particulasCreadas++;
 
     if (particulasCreadas < numParticulas) {
-        setTimeout(crearParticula, 50 + (Math.random() * 150));
+        setTimeout(crearParticula, 30 + (Math.random() * 150));
     }
-    else{
-        particulasCreadas = 0;
-    }
-
 }
 
 function start() {
@@ -100,18 +95,20 @@ function explotar(particula) {
     particula.remove();
 }
 
-
-// setInterval(function() {
-//     start();
-
-//     update();
-// }, 1500);
-
 window.onload = function() {
 	start();
 
 	update();
 };
+
+setInterval(function() {
+    particulasCreadas = 0;
+    start();
+
+    update();
+}, 30000);
+
+
 
 
 //utilerias
