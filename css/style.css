@@ -1,0 +1,53 @@
+body{
+    background:  black;
+}
+.heart {
+  background: #f92446;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f92446;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -50%;
+  left: 0;
+}
+.heart::after {
+  top: 0;
+  right: -50%;
+}
+
+.particula {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.particula[data-padre="false"] {
+    width: 5px;
+    height: 5px;
+}
+
+body, html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    background: black;
+}
+
+#fondo {
+    position: absolute;
+    bottom: -100px;
+    opacity: .4;
+}
